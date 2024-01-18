@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head></head>
+  <body>
+    <input type="button" id="degistir" value="degistir" />
+    <label for="checkbox2">Checkbox 2</label>
+    <input type="checkbox" id="tik" />
+  </body>
+  <script>
+    var button_degistir = document.getElementById("degistir");
+    var tik = document.getElementById("tik");
+
+    function degistirClick() {
+      tik.checked = !tik.checked;
+    }
+
+    button_degistir.addEventListener("click", degistirClick);
+  </script>
+</html>

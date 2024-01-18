@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head></head>
+  <script>
+    function tersCevir1() {
+      var checkbox1 = document.getElementById("checkbox1");
+      if (!checkbox1.checked) return;
+
+      var checkbox2 = document.getElementById("checkbox2");
+      checkbox2.checked = !checkbox2.checked;
+    }
+
+    function tersCevir2() {
+      var checkbox2 = document.getElementById("checkbox2");
+      if (!checkbox2.checked) return;
+
+      var checkbox1 = document.getElementById("checkbox1");
+      checkbox1.checked = !checkbox1.checked;
+    }
+  </script>
+  <body>
+    <label for="checkbox1">Checkbox 1</label>
+    <input type="checkbox" id="checkbox1" onchange="tersCevir1()" />
+    <label for="checkbox2">Checkbox 2</label>
+    <input type="checkbox" id="checkbox2" onchange="tersCevir2()" />
+  </body>
+</html>

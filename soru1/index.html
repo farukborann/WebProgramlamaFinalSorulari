@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <input type="button" value="onceki" id="onceki" />
+    <image id="resim" />
+    <input type="button" value="sonraki" id="sonraki" />
+  </body>
+  <script>
+    var onceki = document.getElementById("onceki");
+    var sonraki = document.getElementById("sonraki");
+    var image = document.getElementById("resim");
+
+    var indis = 1;
+    image.src = "resim" + indis + ".jpg";
+
+    function oncekiclick() {
+      indis--;
+      if (indis < 1) indis = 3;
+      image.src = "resim" + indis + ".jpg";
+    }
+
+    onceki.addEventListener("click", oncekiclick);
+
+    function sonrakiclick() {
+      indis++;
+      if (indis > 3) indis = 1;
+      image.src = "resim" + indis + ".jpg";
+    }
+
+    sonraki.addEventListener("click", sonrakiclick);
+  </script>
+</html>

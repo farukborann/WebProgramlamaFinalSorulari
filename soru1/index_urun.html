@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <input type="button" value="onceki" id="onceki" />
+    <label id="urunadi"></label>
+    <label id="stok"></label>
+    <image id="urunresim" />
+    <input type="button" value="sonraki" id="sonraki" />
+  </body>
+  <script>
+    const urunler = [
+      {
+        urunadi: "urun1",
+        stok: 10,
+        resim: "resim1.jpg",
+      },
+      {
+        urunadi: "urun2",
+        stok: 20,
+        resim: "resim2.jpg",
+      },
+      {
+        urunadi: "urun3",
+        stok: 1,
+        resim: "resim3.jpg",
+      },
+    ];
+
+    var onceki = document.getElementById("onceki");
+    var sonraki = document.getElementById("sonraki");
+
+    var image = document.getElementById("urunresim");
+    var urunadi = document.getElementById("urunadi");
+    var stok = document.getElementById("stok");
+
+    var indis = 0;
+    image.src = urunler[indis].resim;
+    urunadi.innerText = urunler[indis].urunadi;
+    stok.innerText = urunler[indis].stok;
+
+    function oncekiclick() {
+      indis--;
+      if (indis < 0) indis = 2;
+
+      image.src = urunler[indis].resim;
+      urunadi.innerText = urunler[indis].urunadi;
+      stok.innerText = urunler[indis].stok;
+    }
+
+    onceki.addEventListener("click", oncekiclick);
+
+    function sonrakiclick() {
+      indis++;
+      if (indis > 2) indis = 0;
+
+      image.src = urunler[indis].resim;
+      urunadi.innerText = urunler[indis].urunadi;
+      stok.innerText = urunler[indis].stok;
+    }
+
+    sonraki.addEventListener("click", sonrakiclick);
+  </script>
+</html>
